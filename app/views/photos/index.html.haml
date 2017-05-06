@@ -1,2 +1,7 @@
-No photos yet
-%a(href='#') Add a photo
+- if @photos.any?
+  - @photos.each do |photo|
+    %h2= photo.title
+- else
+  No posts yet
+
+%a(href='/photos/new') Add a post
