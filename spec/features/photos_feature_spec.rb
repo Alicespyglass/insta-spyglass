@@ -43,4 +43,19 @@ feature 'Photos' do
       expect(current_path).to eq "/photos/#{dbc.id}"
     end
   end
+
+  context 'Editing posts' do
+
+    before { Photo.create title: 'DBC', id: 1 }
+    scenario 'Let a user edit a post' do
+      visit '/photos'
+      click_link 'DBC'
+      click_link 'Edit DBC'
+      fill_in 'Title', with: 'Death By Chocolate'
+      click_button 'Update Photo'
+      click_link 'Death By Chocolate'
+      expect(page).to have_content 'Death By Chocolate'
+      expect(current_path).to eq '/photos/1'
+    end
+  end
 end
