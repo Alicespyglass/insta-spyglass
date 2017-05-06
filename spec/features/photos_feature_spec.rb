@@ -58,4 +58,16 @@ feature 'Photos' do
       expect(current_path).to eq '/photos/1'
     end
   end
+
+  context 'Deleting posts' do
+    before { Photo.create title: 'DBC' }
+
+    scenario 'Removes a post when a user clicks a delete link' do
+      visit '/photos'
+      click_link 'DBC'
+      click_link 'Delete DBC'
+      expect(page).not_to have_content 'DBC'
+      expect(page).to have_content 'Post deleted successfully'
+    end
+  end
 end
