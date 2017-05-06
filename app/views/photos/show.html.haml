@@ -1,3 +1,4 @@
+%a(href='/photos') Homepage
 %p= @photo.title
 = link_to "Edit #{@photo.title}", edit_photo_path(@photo)
 = link_to "Delete #{@photo.title}", photo_path(@photo), method: :delete

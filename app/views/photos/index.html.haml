@@ -1,7 +1,9 @@
+%br
+%br
+%a(href='/photos/new') Add a post
+
 - if @photos.any?
   - @photos.each do |photo|
     %h2= link_to photo.title, photo_path(photo)
 - else
   No posts yet
-
-%a(href='/photos/new') Add a post
