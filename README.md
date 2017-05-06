@@ -1,3 +1,4 @@
+# insta-spyglass
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,4 +23,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# insta-spyglass
+
+## User Stories
+- Posts can be created by providing a title and attaching an image
+- The homepage lists all the uploaded thumbnails - users can click through to see full-sized images
+- Users must be signed in to create a new posts
+- Users can register/sign up (implemented with Devise)
+
+The image should be processed using Paperclip, to generate thumbnail-sized images
+Images are hosted on S3. Stub calls to S3 for your test environment
+Ensure your S3 secret key is not stored on Github
