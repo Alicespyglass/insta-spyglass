@@ -30,6 +30,16 @@ feature 'Photos' do
       expect(page).to have_content 'DBC'
       expect(current_path).to eq '/photos'
     end
+
+    context 'An invalid post' do
+      scenario 'Does not let you submit a title that is too short' do
+        visit 'photos'
+        click_link 'Add a post'
+        fill_in 'Title', with: ''
+        click_button 'Create Photo'
+        expect(page).to have_content 'error'
+      end
+    end
   end
 
   context 'Viewing posts' do

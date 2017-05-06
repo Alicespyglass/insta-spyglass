@@ -1,5 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Photo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Photo, type: :model do
+  it 'Is not valid without a title' do
+    photo = Photo.new(title: '')
+    expect(photo).to have(1).error_on(:title)
+    expect(photo).not_to be_valid
+  end
+
 end
