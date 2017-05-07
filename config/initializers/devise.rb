@@ -35,6 +35,8 @@ Devise.setup do |config|
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [:email]
+  config.omniauth :facebook, "278612045933515", ENV["FACEBOOK_APP_SECRET"],
+                  callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -251,6 +253,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
