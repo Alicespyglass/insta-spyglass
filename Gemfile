@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'haml'
 gem 'devise',  git: 'https://github.com/plataformatec/devise.git'
+gem 'paperclip'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
